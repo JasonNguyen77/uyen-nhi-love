@@ -1,40 +1,88 @@
-body{
+/* FONT ĐẸP + ĐẬM */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+*{
   margin:0;
-  font-family:'Montserrat',sans-serif;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-.pastel{
-  background:linear-gradient(135deg,#ffd6e7,#ffe9c9,#d6f6ff,#e7d6ff);
+body{
   height:100vh;
+  overflow:hidden;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  background: linear-gradient(135deg,#ffd6e8,#ffe9c7,#d6f5ff,#e6dcff);
 }
 
-.center{
+/* Container */
+.container{
   text-align:center;
+  z-index:2;
 }
 
-/* tên */
-.name{
-  font-family:'Lobster',cursive;
-  font-size:60px;
-  color:#ff3f8e;
-  text-shadow:0 0 20px white;
+/* Chữ phía trên */
+.gift-text{
+  font-size:26px;
+  font-weight:800;
+  color:#ff4d88;
+  margin-bottom:40px; /* 👈 FIX dính quà */
+  animation: float 2s infinite ease-in-out;
 }
 
-/* nút */
-.btn{
-  margin-top:25px;
-  padding:12px 30px;
-  background:#ff8fab;
-  color:white;
-  text-decoration:none;
-  border-radius:20px;
+/* Hộp quà */
+.gift{
+  font-size:90px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* gift */
+.gift:hover{
+  transform:scale(1.2) rotate(-5deg);
+}
+
+/* Tên */
+#name{
+  margin-top:40px;
+  font-size:34px;
+  font-weight:800;
+  color:#ff2d75;
+  letter-spacing:2px;
+  animation: pop 1s ease;
+}
+
+.hidden{
+  display:none;
+}
+
+/* Trái tim */
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation: fly linear infinite;
+  opacity:0.7;
+}
+
+@keyframes fly{
+  from{
+    transform:translateY(100vh);
+  }
+  to{
+    transform:translateY(-10vh);
+  }
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+@keyframes pop{
+  0%{transform:scale(0)}
+  100%{transform:scale(1)}
+}/* gift */
 .gift{
   width:130px;
   height:130px;
