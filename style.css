@@ -1,0 +1,74 @@
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+}
+
+.pastel{
+  background:linear-gradient(135deg,#ffd6e7,#ffe9c9,#d6f6ff,#e7d6ff);
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.center{
+  text-align:center;
+}
+
+/* tên */
+.name{
+  font-family:'Lobster',cursive;
+  font-size:60px;
+  color:#ff3f8e;
+  text-shadow:0 0 20px white;
+}
+
+/* nút */
+.btn{
+  margin-top:25px;
+  padding:12px 30px;
+  background:#ff8fab;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+}
+
+/* gift */
+.gift{
+  width:130px;
+  height:130px;
+  background:#ff8fab;
+  border-radius:20px;
+  position:relative;
+  cursor:pointer;
+}
+
+.lid{
+  width:150px;
+  height:40px;
+  background:#ff6b9a;
+  position:absolute;
+  top:-35px;
+  left:-10px;
+}
+
+.ribbonV{width:20px;height:130px;background:white;position:absolute;left:55px;}
+.ribbonH{width:150px;height:20px;background:white;position:absolute;top:55px;left:-10px;}
+
+.music{
+  width:0;height:0;opacity:0;
+}
+
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:15px;
+}
