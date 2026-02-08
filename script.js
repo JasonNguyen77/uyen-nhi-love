@@ -1,20 +1,28 @@
-setInterval(()=>{
-  const heart=document.createElement("div");
-  heart.innerHTML="❤";
-  heart.style.position="absolute";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.bottom="0";
-  heart.style.color="#ff6b9a";
-  heart.style.animation="up 5s linear";
-  document.body.appendChild(heart);
+const heartsContainer = document.getElementById("hearts");
+const nameEl = document.getElementById("name");
+const music = document.getElementById("bgm");
 
-  setTimeout(()=>heart.remove(),5000);
-},300);
+/* Mở quà */
+function openGift(){
+  nameEl.classList.remove("hidden");
+  music.play();
+}
 
-const style=document.createElement('style');
-style.innerHTML=`
-@keyframes up{
-  from{transform:translateY(0);}
-  to{transform:translateY(-110vh);opacity:0;}
-}`;
-document.head.appendChild(style);
+/* Tạo trái tim bay */
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (3 + Math.random()*4) + "s";
+  heart.style.fontSize = (16 + Math.random()*20) + "px";
+
+  heartsContainer.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },7000);
+}
+
+setInterval(createHeart, 300);
